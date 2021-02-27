@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/new_task_about_js.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid bg-light">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-body bg-white">
+                <div class="header__logo" id="logo"><img src="static/Bh7bvuvQOgw.jpg" class="rounded float-left" width="200" height="132">
+                    <h2>
+                        <ul>
+                            <p class="text-lg-center">{% if greet %} Добро пожаловать, {{ name }}!{% else %}Пожалуйста войдите на сайт.{% endif %}</p>
+                        </ul>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <div class="card card-body bg-white">
+                <button type="button" id='id111' class="btn btn-outline-success">Пациент</button>
+                <button type="button" id='id555' class="btn btn-outline-success">Врач</button>
+                <button type="button" id='id666' class="btn btn-outline-success">Провизор</button>
+            </div>
+            <div class="card card-body bg-white">
+                <button type="button" id="id222" class="btn btn-outline-success">Полезно знать</button>
+                <button type="button" id='id333' class="btn btn-outline-success">Про нас</button>
+                <button type="button" id='id444' class="btn btn-outline-success">Контейнеры</button>
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="card card-body bg-white">
+                <img src="static/programma-ekologicheskogo-vospitaniya-1901.jpg">
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card card-body bg-white">
+                <h3><a class="btn btn-primary" href="registr" role="button">Регистрация</a></h3>
+            </div>
+
+            <div class="card card-body bg-white">
+                <form method="post" action="/login">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="username" class="form-control" id="exampleInputEmail1"
+                               aria-describedby="emailHelp"
+                               placeholder="Enter email">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                               placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                {% if greet %}
+
+                    <form method="post" action="/logout">
+                        <h3>
+                            <button type="submit" name="logout" class="btn btn-primary">Logout</button>
+                        </h3>
+                    </form>{% else %}Если вы уже зарегистрировались, то введите ваши данные.{% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+

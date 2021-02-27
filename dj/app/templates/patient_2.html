@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/new_task_about_js.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-body bg-light" align="center">
+                <h3>
+                    <div class="card card-body bg-light">
+                        <form method="post" action="/patient_1">
+                            <div class="form-group">
+                                <nav class="navbar navbar-light bg-light justify-content-between">
+                                    <a class="navbar-brand">Введите лекарственное средство (МНН).</a>
+                                    <form class="form-inline">
+                                        <input class="form-control mr-sm-2" name='drug' type="search"
+                                               placeholder="Search"
+                                               aria-label="Search">
+                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск
+                                        </button>
+                                    </form>
+                                </nav>
+                            </div>
+                        </form>
+                    </div>
+                </h3>
+                <div class="jumbotron" >
+                    <h1 class="display-4">Экологический калькулятор посчитал следующее:</h1>
+                    <p class="lead">
+                    <div class="alert alert-info" role="alert">
+                    <p>Группа и подгруппа по АТХ классификации: {{ drug_1.group_ath }}</p><br>
+                    <p>Торговые наименования: {{ drug_1.commercial_name }}</p><br>
+                    <p>Экологический риск: {{ drug_1.ecol_risk }}</p><br>
+                    <p>Индекс PВТ: {{ drug_1.index_PBT }}</p><br>
+                    <p>Неактивные метаболит(ы): {{ drug_1.inactive_metabolite }}</p><br>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Индекс PBT - измеряет экологическую опасность и может принимать значение от 0 до 9 (сумма значений
+                        стойкости, биоаккумуляции и токсичности). Чем выше значение индекса РВТ вещества, чем больше его
+                        опасность для окружающей среды.
+                    </div>
+
+
+                    </p>
+                    <hr class="my-4">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

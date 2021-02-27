@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/new_task_about_js.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-body bg-light" align="center">
+                <h3>
+                    <div class="card card-body bg-light">
+                        <form method="post" action="/doctor_1">
+                            <div class="form-group">
+                                <nav class="navbar navbar-light bg-light justify-content-between">
+                                    <a class="navbar-brand">Введите лекарственное средство (МНН).</a>
+                                    <form class="form-inline">
+                                        <input class="form-control mr-sm-2" name='drug' type="search"
+                                               placeholder="Search"
+                                               aria-label="Search">
+                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск
+                                        </button>
+                                    </form>
+                                </nav>
+                            </div>
+                        </form>
+                    </div>
+                </h3>
+                <div class="jumbotron">
+                    <h1 class="display-4">Экологический калькулятор посчитал следующее:</h1>
+                    <p class="lead">
+                    <div class="alert alert-info" role="alert">
+                    <p>Группа и подгруппа по АТХ классификации: {{ drug_1.group_ath }}</p><br>
+                    <p>Торговые наименования: {{ drug_1.commercial_name }}</p><br>
+                    <p>Экологический риск: {{ drug_1.ecol_risk }}</p><br>
+                    <p>Индекс PВТ: {{ drug_1.index_PBT }}</p><br>
+                    <p>Неактивные метаболит(ы): {{ drug_1.inactive_metabolite }}</p><br>
+                    <p>Коэффициент биоаккумуляции (мг/кг) исходного вещества: {{ drug_1.coef_bioaccum_original }}</p><br>
+                    <p>Коэффициент биоаккумуляции (мг/кг) продукта химической инактивации: {{ drug_1.coef_bioaccum_product }}</p><br>
+                    <p>-log 10 LD50 (oral rat) (моль/кг) исходного вещества: {{ drug_1.ld50_original }}</p><br>
+                    <p>-log 10 LD50 (oral rat) (моль/кг) продукта химической инактивации: {{ drug_1.ld50_product }}</p><br>
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Индекс PBT - измеряет экологическую опасность и может принимать значение от 0 до 9 (сумма значений
+                        стойкости, биоаккумуляции и токсичности). Чем выше значение индекса РВТ вещества, чем больше его
+                        опасность для окружающей среды.
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Летальная оральная доза (LD50) – количество химического вещества в моль/кг массы тела, которое
+                        приводит к гибели 50% крыс после перорального приема токсического вещества.
+                        Набор данных для этой конечной точки был получен путем загрузки записей из базы данных
+                        ChemIDplus.
+                    </div>
+                    <div class="alert alert-success" role="alert">
+                        Коэффициент биоаккумуляции – отношение химической концентрации исследуемого вещества в рыбе к
+                        концентрации химического вещества в окружаю-щей среде. Данные были собраны из нескольких разных
+                        баз данных.
+                    </div>
+                    </p>
+                    <hr class="my-4">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
